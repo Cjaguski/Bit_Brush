@@ -6,7 +6,7 @@ body{
     display: grid;
     height: 95vh;
     width: 20vw;
-    grid-template-rows: 2fr 2fr 10fr 1fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 0.5fr 10fr 1fr 2fr 2fr;
 }
 
 #topmenu_container {
@@ -91,6 +91,35 @@ body{
     font-size: 20px;
     border: 0;
 }
+
+#selection_info_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#selection_info_container p:nth-child(1){
+    margin-left: 30px;
+}
+
+
+#selection_cor_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#selection_cor_container div{
+    background-color: black;
+    height: 50%;
+    width: 70px;
+    margin-left: 10px;
+    
+    
+}
+
 
 #drawing_container {
     align-content: center;
