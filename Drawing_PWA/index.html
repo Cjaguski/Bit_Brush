@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitBrush</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="main_container">
+        <div id="topmenu_container">
+            <div >
+                <div onpointerdown="show_topmenu_button()"><img src="/assets/img/menu_icon_256.png"></div>
+                <div class="topmenu_button">
+                    <div id="topmenu_show_grid_container"><p>Show Grid Lines</p><form><input type="checkbox" checked onpointerdown="toggle_grid(this)"></form></div>
+                    <div id="topmenu_save_container"><p>Save Canvas</p></div>
+                    <div id="topmenu_export_container" onpointerdown="export_canvas()"><p>Export Canvas as PNG</p></div>
+                    
+                    
+                </div>
+                
+            </div>
+            
+            <h1>BitBrush</h1>
+
+            <div><img src="./assets/img/home_icon_512.png"></div>
+
+        </div>
+        <div id="drawing_title_container"><form><input id="input_title" type="text" maxlength="25" placeholder="My Canvas"></form></div>
+        <div id="drawing_container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="colors_container">
+            <div id="color_black" data-color="black" onpointerdown="change_color(this)"></div>
+            <div id="color_gray" data-color="gray" onpointerdown="change_color(this)"></div>
+            <div id="color_red" data-color="red" onpointerdown="change_color(this)"></div>
+            <div id="color_orange" data-color="orange" onpointerdown="change_color(this)"></div>
+            <div id="color_yellow" data-color="yellow" onpointerdown="change_color(this)"></div>
+            <div id="color_blue" data-color="blue" onpointerdown="change_color(this)"></div>
+            <div id="color_light_blue" data-color="lightblue" onpointerdown="change_color(this)"></div>
+            <div id="color_purple" data-color="purple" onpointerdown="change_color(this)"></div>
+            <div id="color_green" data-color="green" onpointerdown="change_color(this)"></div>
+            
+        </div>
+        <div id="toolbar_container">
+            <div class="toolbar_item"><img src="./assets/img/pencil_icon_256.png" alt="pencil"></div>
+            
+            <div class="toolbar_item"><img src="./assets/img/eraser_256.png" alt="eraser"></div>
+            <div class="toolbar_item"><img src="./assets/img/paint_bucket_256.png" alt="paint bucket"></div>
+        </div>
+        <div id="undo_redo_container">
+            <div id="undo_button" ><img src="./assets/img/left-arrow.png" alt="undo" onpointerdown="undo()"></div>
+            <div id="redo_button" ><img src="./assets/img/left-arrow.png" alt="redo" onpointerdown="redo()" ></div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "name": "Bit Brush",
+    "short_name": "BitBrush",
+    "description": "Uma PWA onde é possível desenhar pixel arts básicas, salvar, abrir e exportar, tudo funcionando em com service work",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./assets/icons/bitbrush_icon_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./assets/icons/bitbrush_icon_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+
+    
+}
