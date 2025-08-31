@@ -111,6 +111,13 @@ function do_draw(){
         
     };
     console.log("acabou")
+    let cor_texto = document.getElementById("cor_texto");
+    console.log(cor_texto.style.backgroundColor)
+    if(cor_texto.style.backgroundColor == ""){selected_color="black"}
+    else{
+        selected_color = cor_texto.style.backgroundColor
+    }
+    
 }
 //UNDO REDO FUNCTIONS END
 
@@ -148,6 +155,7 @@ function draw_grid_lines(){
         ctx.lineTo(window_width, i*cell_size);
         ctx.stroke();
     }
+    
 }
 // DRAW GRID LINES FUNCTIONS END
 
@@ -203,7 +211,8 @@ canvas.addEventListener("pointerdown", (e) => {
         ctx.fillStyle = selected_color;
         draw_rect(e.offsetX, e.offsetY)
         console.log("DESENHOU")
-            
+            console.log(selected_color)
+    console.log(selected_tool)
 
     }
 
@@ -260,6 +269,8 @@ toolbar.addEventListener("pointerdown", (e) => {
 function change_color(button){
     selected_color = button.dataset.color;
     selected_tool = tools[0]
+    let ferramenta_texto = document.getElementById("ferramenta_texto");
+    ferramenta_texto.innerHTML = `Ferramenta <strong>${selected_tool.toUpperCase()}</strong>`
     let cor_texto = document.getElementById("cor_texto");
     cor_texto.style.backgroundColor = `${selected_color}`
 }
@@ -269,11 +280,14 @@ function toggle_grid(button){
         //just unchecked
         is_grid_visible = false;
         erase_grid_lines();
+        do_draw()
     }
     else{
         //just checked
         is_grid_visible = true;
+        do_draw()
         draw_grid_lines();
+        
     }
 }
 
